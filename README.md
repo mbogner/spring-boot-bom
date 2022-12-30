@@ -1,6 +1,6 @@
 # spring-boot-bom
 
-This is the source of dev.mbo:spring-boot-bom. This is meant for typical projects based on spring boot with various
+This is the source of `dev.mbo:spring-boot-bom`. This is meant for typical projects based on spring boot with various
 other libraries that don't come with spring boot itself.
 
 ## Note for gradle config for publishing:
