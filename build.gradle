@@ -1,0 +1,120 @@
+plugins {
+    id "java-library" // we don't want to create a jar but found no other working solution so far
+    id "signing" // required for maven central
+    // https://plugins.gradle.org/plugin/ru.vyarus.pom
+    id "ru.vyarus.pom" version "2.2.2"
+    // https://plugins.gradle.org/plugin/io.spring.dependency-management
+    id "io.spring.dependency-management" version "1.1.0"
+}
+
+group = "dev.mbo"
+
+dependencyManagement {
+    imports {
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.0.1")
+        // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:1.8.0")
+        // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
+        mavenBom("org.testcontainers:testcontainers-bom:1.17.6")
+    }
+    dependencies {
+        // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+        dependency("org.apache.commons:commons-lang3:3.12.0")
+
+        // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
+        dependency("org.mapstruct:mapstruct:1.5.3.Final")
+        // https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor
+        dependency("org.mapstruct:mapstruct-processor:1.5.3.Final")
+
+        // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
+        dependency("io.swagger.core.v3:swagger-annotations:2.2.7")
+        // https://mvnrepository.com/artifact/io.swagger/swagger-annotations
+        dependency("io.swagger:swagger-annotations:1.6.9")
+        // https://mvnrepository.com/artifact/org.openapitools/jackson-databind-nullable
+        dependency("org.openapitools:jackson-databind-nullable:0.2.4")
+        // https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
+        dependency("com.google.code.findbugs:jsr305:3.0.2")
+        // https://mvnrepository.com/artifact/com.github.scribejava/scribejava-core
+        dependency("com.github.scribejava:scribejava-core:8.3.3")
+        // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+        dependency("org.springdoc:springdoc-openapi-ui:1.6.14")
+
+        // https://mvnrepository.com/artifact/org.freemarker/freemarker
+        dependency("org.freemarker:freemarker:2.3.31")
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+publishing {
+    repositories {
+        maven {
+            def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+            def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots"
+            url = version.endsWith("SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username ossrhUsername
+                password ossrhPassword
+            }
+        }
+    }
+
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+pom {
+    name "Spring Boot BOM"
+    description "BOM for Spring Boot based projects"
+    licenses {
+        license {
+            name "Apache License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    scm {
+        url "https://github.com/mbogner/spring-boot-bom"
+        connection "git@github.com:mbogner/spring-boot-bom.git"
+        developerConnection "git@github.com:mbogner/spring-boot-bom.git"
+    }
+    developers {
+        developer {
+            id "mbo"
+            name "Manuel Bogner"
+            email "outrage_breath.0t@icloud.com"
+            organization "mbo.dev"
+            organizationUrl "https://mbo.dev"
+            roles {
+                role "architect"
+                role "developer"
+            }
+            timezone "Europe/Vienna"
+        }
+    }
+    organization {
+        name "mbo.dev"
+        url "https://mbo.dev"
+    }
+}
+
+withPomXml {
+    it.appendNode('packaging', 'pom')
+}
+
+signing {
+    sign publishing.publications.mavenJava
+}
+
+wrapper {
+    // https://gradle.org/releases/
+    gradleVersion = "7.6"
+    distributionType = Wrapper.DistributionType.BIN
+}

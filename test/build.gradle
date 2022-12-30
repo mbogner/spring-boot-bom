@@ -1,0 +1,34 @@
+plugins {
+    id "java-library"
+    // https://plugins.gradle.org/plugin/io.spring.dependency-management
+    id "io.spring.dependency-management" version "1.1.0"
+}
+
+group = "dev.mbo"
+
+dependencyManagement {
+    imports {
+        mavenBom("dev.mbo:spring-boot-bom:2022.12.1-SNAPSHOT")
+    }
+    resolutionStrategy {
+        cacheChangingModulesFor(0, "seconds")
+    }
+}
+
+dependencies {
+    implementation("org.apache.commons:commons-lang3")
+
+}
+
+repositories {
+    maven {
+        url("https://s01.oss.sonatype.org/content/repositories/snapshots")
+    }
+    mavenCentral()
+}
+
+wrapper {
+    // https://gradle.org/releases/
+    gradleVersion = "7.6"
+    distributionType = Wrapper.DistributionType.BIN
+}
