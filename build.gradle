@@ -50,11 +50,25 @@ repositories {
     mavenCentral()
 }
 
+// using "artifact bomZip" makes the project a pom packaging
+task bomZip(type: Zip) {
+    archiveFileName = "bom-${project.version}.zip"
+    from "${project.buildDir}/publications/maven"
+    include '*.xml'
+}
+
+// disable gradle-metadata
+tasks.withType(GenerateModuleMetadata).configureEach {
+    enabled = false
+}
+
 publishing {
     repositories {
         maven {
             def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-//            def releasesRepoUrl = "https://s01.oss.sonatype.org/content/repositories/releases"
+            // def releasesRepoUrl = "https://s01.oss.sonatype.org/content/repositories/releases"
+
+            // https://s01.oss.sonatype.org/content/repositories/snapshots/dev/mbo/spring-boot-bom
             def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots"
             url = version.endsWith("SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
             credentials {
@@ -65,8 +79,9 @@ publishing {
     }
 
     publications {
-        mavenJava(MavenPublication) {
+        maven(MavenPublication) {
             from components.java
+            artifact bomZip
         }
     }
 }
@@ -106,12 +121,8 @@ pom {
     }
 }
 
-withPomXml {
-    it.appendNode('packaging', 'pom')
-}
-
 signing {
-    sign publishing.publications.mavenJava
+    sign publishing.publications.maven
 }
 
 wrapper {

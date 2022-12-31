@@ -30,11 +30,7 @@ hint: using `~/.gnupg/secring.gpg` in the gradle.properties doesn't work. replac
 Simply run:
 
 ```shell
-./gradlew clean build publish
+./gradlew clean generatePomFileForMavenPublication signMavenPublication bomZip publish
 ```
 
-To check the bom before upload:
-
-```shell
-./gradlew clean generatePomFileForMavenPublication
-```
+To check the bom before upload simply skip publish.
