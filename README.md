@@ -34,3 +34,5 @@ Simply run:
 ```
 
 To check the bom before upload simply skip publish.
+
+You can find the files after publish under https://s01.oss.sonatype.org/content/groups/public/dev/mbo/spring-boot-bom/
