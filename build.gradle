@@ -11,36 +11,36 @@ group = "dev.mbo"
 dependencyManagement {
     imports {
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.0.1")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.1.0")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
-        mavenBom("org.jetbrains.kotlin:kotlin-bom:1.8.0")
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:1.8.21")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("org.testcontainers:testcontainers-bom:1.17.6")
+        mavenBom("org.testcontainers:testcontainers-bom:1.18.3")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
         dependency("org.apache.commons:commons-lang3:3.12.0")
 
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
-        dependency("org.mapstruct:mapstruct:1.5.3.Final")
+        dependency("org.mapstruct:mapstruct:1.5.5.Final")
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor
-        dependency("org.mapstruct:mapstruct-processor:1.5.3.Final")
+        dependency("org.mapstruct:mapstruct-processor:1.5.5.Final")
 
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
-        dependency("io.swagger.core.v3:swagger-annotations:2.2.7")
+        dependency("io.swagger.core.v3:swagger-annotations:2.2.10")
         // https://mvnrepository.com/artifact/io.swagger/swagger-annotations
-        dependency("io.swagger:swagger-annotations:1.6.9")
+        dependency("io.swagger:swagger-annotations:1.6.11")
         // https://mvnrepository.com/artifact/org.openapitools/jackson-databind-nullable
-        dependency("org.openapitools:jackson-databind-nullable:0.2.4")
+        dependency("org.openapitools:jackson-databind-nullable:0.2.6")
         // https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
         dependency("com.google.code.findbugs:jsr305:3.0.2")
         // https://mvnrepository.com/artifact/com.github.scribejava/scribejava-core
         dependency("com.github.scribejava:scribejava-core:8.3.3")
         // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
-        dependency("org.springdoc:springdoc-openapi-ui:1.6.14")
+        dependency("org.springdoc:springdoc-openapi-ui:1.7.0")
 
         // https://mvnrepository.com/artifact/org.freemarker/freemarker
-        dependency("org.freemarker:freemarker:2.3.31")
+        dependency("org.freemarker:freemarker:2.3.32")
     }
 }
 
@@ -54,6 +54,7 @@ task bomZip(type: Zip) {
     archiveFileName = "bom-${project.version}.zip"
     from "${project.buildDir}/publications/maven"
     include '*.xml'
+    dependsOn(":generatePomFileForMavenPublication")
 }
 
 // disable gradle-metadata
@@ -123,6 +124,6 @@ signing {
 
 wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "7.6"
+    gradleVersion = "8.1.1"
     distributionType = Wrapper.DistributionType.BIN
 }
