@@ -1,7 +1,7 @@
 plugins {
     id "java-library"
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
-    id "io.spring.dependency-management" version "1.1.0"
+    id "io.spring.dependency-management" version "1.1.4"
 }
 
 group = "dev.mbo"
@@ -9,7 +9,7 @@ group = "dev.mbo"
 dependencyManagement {
     imports {
         // https://s01.oss.sonatype.org/content/groups/public/dev/mbo/spring-boot-bom/
-        mavenBom("dev.mbo:spring-boot-bom:2023.6.0")
+        mavenBom("dev.mbo:spring-boot-bom:2024.4.0-SNAPSHOT")
     }
     resolutionStrategy {
         cacheChangingModulesFor(0, "seconds")
@@ -31,6 +31,6 @@ repositories {
 
 wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.1.1"
+    gradleVersion = "8.7"
     distributionType = Wrapper.DistributionType.BIN
 }

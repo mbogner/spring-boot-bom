@@ -3,7 +3,7 @@ plugins {
     id "signing" // required for maven central
     id "maven-publish"
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
-    id "io.spring.dependency-management" version "1.1.0"
+    id "io.spring.dependency-management" version "1.1.4"
 }
 
 group = "dev.mbo"
@@ -11,15 +11,15 @@ group = "dev.mbo"
 dependencyManagement {
     imports {
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.1.0")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.2.5")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
-        mavenBom("org.jetbrains.kotlin:kotlin-bom:1.8.21")
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:1.9.23")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("org.testcontainers:testcontainers-bom:1.18.3")
+        mavenBom("org.testcontainers:testcontainers-bom:1.19.7")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-        dependency("org.apache.commons:commons-lang3:3.12.0")
+        dependency("org.apache.commons:commons-lang3:3.14.0")
 
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
         dependency("org.mapstruct:mapstruct:1.5.5.Final")
@@ -27,9 +27,9 @@ dependencyManagement {
         dependency("org.mapstruct:mapstruct-processor:1.5.5.Final")
 
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
-        dependency("io.swagger.core.v3:swagger-annotations:2.2.10")
+        dependency("io.swagger.core.v3:swagger-annotations:2.2.21")
         // https://mvnrepository.com/artifact/io.swagger/swagger-annotations
-        dependency("io.swagger:swagger-annotations:1.6.11")
+        dependency("io.swagger:swagger-annotations:1.6.14")
         // https://mvnrepository.com/artifact/org.openapitools/jackson-databind-nullable
         dependency("org.openapitools:jackson-databind-nullable:0.2.6")
         // https://mvnrepository.com/artifact/com.google.code.findbugs/jsr305
@@ -37,7 +37,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/com.github.scribejava/scribejava-core
         dependency("com.github.scribejava:scribejava-core:8.3.3")
         // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
-        dependency("org.springdoc:springdoc-openapi-ui:1.7.0")
+        dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
         // https://mvnrepository.com/artifact/org.freemarker/freemarker
         dependency("org.freemarker:freemarker:2.3.32")
@@ -124,6 +124,6 @@ signing {
 
 wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.1.1"
+    gradleVersion = "8.7"
     distributionType = Wrapper.DistributionType.BIN
 }
