@@ -38,9 +38,15 @@ hint: using `~/.gnupg/secring.gpg` in the gradle.properties doesn't work. replac
 Simply run:
 
 ```shell
-./gradlew clean generatePomFileForMavenPublication signMavenPublication bomZip publish publishToMavenLocal
+./gradlew clean signMavenPublication bomZip publishToMavenLocal publish
 ```
 
 To check the bom before upload simply skip publish.
 
 You can find the files after publish under https://s01.oss.sonatype.org/content/groups/public/dev/mbo/spring-boot-bom/
+
+## Maven Central
+
+This is using OSSRH with login under https://s01.oss.sonatype.org/.
+This is legacy and needs migration. The login token for nexus can be downloaded from nexus. Not the same as the
+credentials anymore!
