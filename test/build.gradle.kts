@@ -10,7 +10,7 @@ dependencyManagement {
     imports {
         // https://s01.oss.sonatype.org/content/groups/public/dev/mbo/spring-boot-bom/
         // https://s01.oss.sonatype.org/service/local/repositories/releases/content/dev/mbo/spring-boot-bom/
-        mavenBom("dev.mbo:spring-boot-bom:2024.7.1")
+        mavenBom("dev.mbo:spring-boot-bom:2024.8.1")
     }
     resolutionStrategy {
         cacheChangingModulesFor(0, "seconds")
