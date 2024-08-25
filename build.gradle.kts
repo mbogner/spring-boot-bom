@@ -11,20 +11,20 @@ group = "dev.mbo"
 dependencyManagement {
     imports {
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.3.2")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.3.3")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
-        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.0.0")
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.0.20")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("org.testcontainers:testcontainers-bom:1.20.0")
+        mavenBom("org.testcontainers:testcontainers-bom:1.20.1")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-        dependency("org.apache.commons:commons-lang3:3.15.0")
+        dependency("org.apache.commons:commons-lang3:3.16.0")
 
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
-        dependency("org.mapstruct:mapstruct:1.5.5.Final")
+        dependency("org.mapstruct:mapstruct:1.6.0")
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor
-        dependency("org.mapstruct:mapstruct-processor:1.5.5.Final")
+        dependency("org.mapstruct:mapstruct-processor:1.6.0")
 
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
         dependency("io.swagger.core.v3:swagger-annotations:2.2.22")
@@ -119,6 +119,6 @@ signing {
 
 tasks.wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.9"
+    gradleVersion = "8.10"
     distributionType = Wrapper.DistributionType.BIN
 }
