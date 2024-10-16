@@ -10,31 +10,85 @@ group = "dev.mbo"
 
 dependencyManagement {
     imports {
+        // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-parent
+        mavenBom("org.springframework.cloud:spring-cloud-starter-parent:2023.0.3")
+        // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2023.0.3")
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.3.3")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.3.4")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
-        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.0.20")
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.0.21")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("org.testcontainers:testcontainers-bom:1.20.1")
+        mavenBom("org.testcontainers:testcontainers-bom:1.20.2")
+        // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
+        mavenBom("software.amazon.awssdk:bom:2.28.22")
+        // https://mvnrepository.com/artifact/io.ktor/ktor-bom
+        mavenBom("io.ktor:ktor-bom:3.0.0")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-        dependency("org.apache.commons:commons-lang3:3.16.0")
+        dependency("org.apache.commons:commons-lang3:3.17.0")
+        // https://mvnrepository.com/artifact/commons-io/commons-io
+        dependency("commons-io:commons-io:2.17.0")
+        // https://mvnrepository.com/artifact/org.apache.commons/commons-pool2
+        dependency("org.apache.commons:commons-pool2:2.12.0")
+        // https://mvnrepository.com/artifact/org.freemarker/freemarker
+        dependency("org.freemarker:freemarker:2.3.33")
+        // https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client
+        dependency("org.keycloak:keycloak-admin-client:26.0.0")
+        // https://mvnrepository.com/artifact/com.redis/testcontainers-redis
+        dependency("com.redis:testcontainers-redis:2.2.2")
+        // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
+        dependency("org.mockito.kotlin:mockito-kotlin:5.4.0")
+        // https://mvnrepository.com/artifact/com.aallam.openai/openai-client
+        dependency("com.aallam.openai:openai-client:3.8.2")
+        // https://mvnrepository.com/artifact/org.jsoup/jsoup
+        dependency("org.jsoup:jsoup:1.18.1")
+        // https://mvnrepository.com/artifact/org.wiremock/wiremock
+        dependency("org.wiremock:wiremock:3.9.1")
 
+        // OTP - https://mvnrepository.com/artifact/com.eatthepath/java-otp
+        dependency("com.eatthepath:java-otp:0.4.0")
+        // QR-Code - https://mvnrepository.com/artifact/com.google.zxing/core
+        dependency("com.google.zxing:core:3.5.3")
+
+        // http client
+        // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
+        dependency("org.apache.httpcomponents.core5:httpcore5:5.3")
+        // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
+        dependency("org.apache.httpcomponents.client5:httpclient5:5.4")
+
+        // database
+        // https://mvnrepository.com/artifact/org.postgresql/postgresql
+        dependency("org.postgresql:postgresql:42.7.4")
+        // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
+        dependency("org.flywaydb:flyway-core:10.19.0")
+        // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
+        dependency("org.flywaydb:flyway-database-postgresql:10.19.0")
+        // https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-60
+        dependency("com.vladmihalcea:hibernate-types-60:2.21.1")
+
+        // mapper
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
-        dependency("org.mapstruct:mapstruct:1.6.0")
+        dependency("org.mapstruct:mapstruct:1.6.2")
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor
-        dependency("org.mapstruct:mapstruct-processor:1.6.0")
+        dependency("org.mapstruct:mapstruct-processor:1.6.2")
 
+        // docs
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
-        dependency("io.swagger.core.v3:swagger-annotations:2.2.22")
+        dependency("io.swagger.core.v3:swagger-annotations:2.2.23")
+        // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models
+        dependency("io.swagger.core.v3:swagger-models:2.2.23")
         // https://mvnrepository.com/artifact/com.github.scribejava/scribejava-core
         dependency("com.github.scribejava:scribejava-core:8.3.3")
         // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
-        // https://mvnrepository.com/artifact/org.freemarker/freemarker
-        dependency("org.freemarker:freemarker:2.3.33")
+        // sentry
+        // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.15.0")
+        // https://mvnrepository.com/artifact/io.sentry/sentry-logback
+        dependency("io.sentry:sentry-logback:7.15.0")
     }
 }
 
@@ -45,6 +99,8 @@ repositories {
 
 // using "artifact bomZip" makes the project a pom packaging
 tasks.register<Zip>("bomZip") {
+    group = "build"
+    description = "create zip from bom"
     archiveFileName.set("bom-${project.version}.zip")
     from(layout.buildDirectory.dir("publications/maven"))
     include("*.xml")
@@ -119,6 +175,6 @@ signing {
 
 tasks.wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.10"
+    gradleVersion = "8.10.2"
     distributionType = Wrapper.DistributionType.BIN
 }
