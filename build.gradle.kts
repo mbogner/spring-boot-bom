@@ -15,13 +15,13 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:2023.0.3")
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.3.4")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.3.5")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.jetbrains.kotlin:kotlin-bom:2.0.21")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("org.testcontainers:testcontainers-bom:1.20.2")
+        mavenBom("org.testcontainers:testcontainers-bom:1.20.3")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.28.22")
+        mavenBom("software.amazon.awssdk:bom:2.29.0")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.0.0")
     }
@@ -35,7 +35,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.freemarker/freemarker
         dependency("org.freemarker:freemarker:2.3.33")
         // https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client
-        dependency("org.keycloak:keycloak-admin-client:26.0.0")
+        dependency("org.keycloak:keycloak-admin-client:26.0.1")
         // https://mvnrepository.com/artifact/com.redis/testcontainers-redis
         dependency("com.redis:testcontainers-redis:2.2.2")
         // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
@@ -45,16 +45,18 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.jsoup/jsoup
         dependency("org.jsoup:jsoup:1.18.1")
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
-        dependency("org.wiremock:wiremock:3.9.1")
+        dependency("org.wiremock:wiremock:3.9.2")
 
         // OTP - https://mvnrepository.com/artifact/com.eatthepath/java-otp
         dependency("com.eatthepath:java-otp:0.4.0")
         // QR-Code - https://mvnrepository.com/artifact/com.google.zxing/core
         dependency("com.google.zxing:core:3.5.3")
+        // https://mvnrepository.com/artifact/com.google.zxing/javase
+        dependency("com.google.zxing:javase:3.5.3")
 
         // http client
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
-        dependency("org.apache.httpcomponents.core5:httpcore5:5.3")
+        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.1")
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
         dependency("org.apache.httpcomponents.client5:httpclient5:5.4")
 
@@ -62,9 +64,9 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         dependency("org.postgresql:postgresql:42.7.4")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
-        dependency("org.flywaydb:flyway-core:10.19.0")
+        dependency("org.flywaydb:flyway-core:10.20.1")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
-        dependency("org.flywaydb:flyway-database-postgresql:10.19.0")
+        dependency("org.flywaydb:flyway-database-postgresql:10.20.1")
         // https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-60
         dependency("com.vladmihalcea:hibernate-types-60:2.21.1")
 
@@ -76,9 +78,9 @@ dependencyManagement {
 
         // docs
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
-        dependency("io.swagger.core.v3:swagger-annotations:2.2.23")
+        dependency("io.swagger.core.v3:swagger-annotations:2.2.25")
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models
-        dependency("io.swagger.core.v3:swagger-models:2.2.23")
+        dependency("io.swagger.core.v3:swagger-models:2.2.25")
         // https://mvnrepository.com/artifact/com.github.scribejava/scribejava-core
         dependency("com.github.scribejava:scribejava-core:8.3.3")
         // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
@@ -86,9 +88,9 @@ dependencyManagement {
 
         // sentry
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.15.0")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.16.0")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
-        dependency("io.sentry:sentry-logback:7.15.0")
+        dependency("io.sentry:sentry-logback:7.16.0")
     }
 }
 

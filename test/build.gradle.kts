@@ -10,7 +10,7 @@ dependencyManagement {
     imports {
         // https://s01.oss.sonatype.org/content/groups/public/dev/mbo/spring-boot-bom/
         // https://s01.oss.sonatype.org/service/local/repositories/releases/content/dev/mbo/spring-boot-bom/
-        mavenBom("dev.mbo:spring-boot-bom:2024.8.1")
+        mavenBom("dev.mbo:spring-boot-bom:2024.10.2")
     }
     resolutionStrategy {
         cacheChangingModulesFor(0, "seconds")
@@ -45,7 +45,7 @@ tasks {
 
     wrapper {
         // https://gradle.org/releases/
-        gradleVersion = "8.9"
+        gradleVersion = "8.10.2"
         distributionType = Wrapper.DistributionType.BIN
     }
 }
