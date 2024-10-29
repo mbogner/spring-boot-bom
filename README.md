@@ -35,18 +35,18 @@ hint: using `~/.gnupg/secring.gpg` in the gradle.properties doesn't work. replac
 
 ## Steps for publishing
 
-Simply run:
-
+Local:
 ```shell
-./gradlew clean signMavenPublication bomZip publishToMavenLocal publish
+./gradlew clean signMavenPublication publishToMavenLocal
 ```
 
-To check the bom before upload simply skip publish.
+see `~/.m2/repository/dev/mbo/library-bom` for the created content
 
-You can find the files after publish under https://s01.oss.sonatype.org/content/groups/public/dev/mbo/spring-boot-bom/
+Release:
+```shell
+./gradlew publishToSonatype closeAndReleaseSonatypeStagingRepository
+```
 
-## Maven Central
+By running this you don't need to use the web interface to close and release the library.
 
-This is using OSSRH with login under https://s01.oss.sonatype.org/.
-This is legacy and needs migration. The login token for nexus can be downloaded from nexus. Not the same as the
-credentials anymore!
+see https://s01.oss.sonatype.org/content/groups/public/dev/mbo/

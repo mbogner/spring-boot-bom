@@ -1,9 +1,11 @@
 plugins {
     `java-library` // we don't want to create a jar but found no other working solution so far
     signing // required for maven central
-    `maven-publish`
+    id("maven-publish")
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
     id("io.spring.dependency-management") version "1.1.6"
+    // https://plugins.gradle.org/plugin/io.github.gradle-nexus.publish-plugin
+    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
 }
 
 group = "dev.mbo"
@@ -114,22 +116,19 @@ tasks.withType<GenerateModuleMetadata>().configureEach {
     enabled = false
 }
 
-publishing {
+nexusPublishing {
     repositories {
-        maven {
-            val releasesRepoUrl = uri("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
-            // val releasesRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/releases")
-
-            // https://s01.oss.sonatype.org/content/repositories/snapshots/dev/mbo/spring-boot-bom
-            val snapshotsRepoUrl = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
-            url = if (version.toString().endsWith("SNAPSHOT")) snapshotsRepoUrl else releasesRepoUrl
-            credentials {
-                username = project.findProperty("ossrhUsername") as String?
-                password = project.findProperty("ossrhPassword") as String?
-            }
+        sonatype {
+            // needed because default was updated to another server that this project can't use atm
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+            username.set(project.findProperty("ossrhUsername") as String?)
+            password.set(project.findProperty("ossrhPassword") as String?)
         }
     }
+}
 
+publishing {
     publications {
         create<MavenPublication>("maven") {
             from(components["java"])
