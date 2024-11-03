@@ -23,9 +23,9 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.20.3")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.29.0")
+        mavenBom("software.amazon.awssdk:bom:2.29.6")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
-        mavenBom("io.ktor:ktor-bom:3.0.0")
+        mavenBom("io.ktor:ktor-bom:3.0.1")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
@@ -37,7 +37,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.freemarker/freemarker
         dependency("org.freemarker:freemarker:2.3.33")
         // https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client
-        dependency("org.keycloak:keycloak-admin-client:26.0.1")
+        dependency("org.keycloak:keycloak-admin-client:26.0.2")
         // https://mvnrepository.com/artifact/com.redis/testcontainers-redis
         dependency("com.redis:testcontainers-redis:2.2.2")
         // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
@@ -60,7 +60,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
         dependency("org.apache.httpcomponents.core5:httpcore5:5.3.1")
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
-        dependency("org.apache.httpcomponents.client5:httpclient5:5.4")
+        dependency("org.apache.httpcomponents.client5:httpclient5:5.4.1")
 
         // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
