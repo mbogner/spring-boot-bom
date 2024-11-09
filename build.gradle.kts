@@ -25,7 +25,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.20.3")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.29.6")
+        mavenBom("software.amazon.awssdk:bom:2.29.9")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.0.1")
     }
@@ -68,9 +68,9 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         dependency("org.postgresql:postgresql:42.7.4")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
-        dependency("org.flywaydb:flyway-core:10.20.1")
+        dependency("org.flywaydb:flyway-core:10.21.0")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
-        dependency("org.flywaydb:flyway-database-postgresql:10.20.1")
+        dependency("org.flywaydb:flyway-database-postgresql:10.21.0")
         // https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-60
         dependency("com.vladmihalcea:hibernate-types-60:2.21.1")
 
