@@ -23,9 +23,9 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.jetbrains.kotlin:kotlin-bom:2.0.21")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("org.testcontainers:testcontainers-bom:1.20.3")
+        mavenBom("org.testcontainers:testcontainers-bom:1.20.4")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.29.9")
+        mavenBom("software.amazon.awssdk:bom:2.29.17")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.0.1")
     }
@@ -33,13 +33,13 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
         dependency("org.apache.commons:commons-lang3:3.17.0")
         // https://mvnrepository.com/artifact/commons-io/commons-io
-        dependency("commons-io:commons-io:2.17.0")
+        dependency("commons-io:commons-io:2.18.0")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-pool2
         dependency("org.apache.commons:commons-pool2:2.12.0")
         // https://mvnrepository.com/artifact/org.freemarker/freemarker
         dependency("org.freemarker:freemarker:2.3.33")
         // https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client
-        dependency("org.keycloak:keycloak-admin-client:26.0.2")
+        dependency("org.keycloak:keycloak-admin-client:26.0.3")
         // https://mvnrepository.com/artifact/com.redis/testcontainers-redis
         dependency("com.redis:testcontainers-redis:2.2.2")
         // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
@@ -68,17 +68,17 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         dependency("org.postgresql:postgresql:42.7.4")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
-        dependency("org.flywaydb:flyway-core:10.21.0")
+        dependency("org.flywaydb:flyway-core:10.22.0")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
-        dependency("org.flywaydb:flyway-database-postgresql:10.21.0")
+        dependency("org.flywaydb:flyway-database-postgresql:10.22.0")
         // https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-60
         dependency("com.vladmihalcea:hibernate-types-60:2.21.1")
 
         // mapper
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
-        dependency("org.mapstruct:mapstruct:1.6.2")
+        dependency("org.mapstruct:mapstruct:1.6.3")
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor
-        dependency("org.mapstruct:mapstruct-processor:1.6.2")
+        dependency("org.mapstruct:mapstruct-processor:1.6.3")
 
         // docs
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
@@ -92,9 +92,9 @@ dependencyManagement {
 
         // sentry
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.16.0")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.18.0")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
-        dependency("io.sentry:sentry-logback:7.16.0")
+        dependency("io.sentry:sentry-logback:7.18.0")
     }
 }
 
@@ -178,6 +178,6 @@ signing {
 
 tasks.wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.10.2"
+    gradleVersion = "8.11.1"
     distributionType = Wrapper.DistributionType.BIN
 }
