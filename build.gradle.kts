@@ -3,11 +3,11 @@ plugins {
     signing // required for maven central
     id("maven-publish")
     // https://plugins.gradle.org/plugin/io.spring.dependency-management
-    id("io.spring.dependency-management") version "1.1.6"
+    id("io.spring.dependency-management") version "1.1.7"
     // https://plugins.gradle.org/plugin/io.github.gradle-nexus.publish-plugin
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
     // https://plugins.gradle.org/plugin/net.researchgate.release
-    id("net.researchgate.release") version "3.0.2"
+    id("net.researchgate.release") version "3.1.0"
 }
 
 group = "dev.mbo"
@@ -19,15 +19,15 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:2024.0.0")
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.0")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.1")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.jetbrains.kotlin:kotlin-bom:2.1.0")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.20.4")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.29.34")
+        mavenBom("software.amazon.awssdk:bom:2.29.40")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
-        mavenBom("io.ktor:ktor-bom:3.0.2")
+        mavenBom("io.ktor:ktor-bom:3.0.3")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
@@ -37,7 +37,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-pool2
         dependency("org.apache.commons:commons-pool2:2.12.0")
         // https://mvnrepository.com/artifact/org.freemarker/freemarker
-        dependency("org.freemarker:freemarker:2.3.33")
+        dependency("org.freemarker:freemarker:2.3.34")
         // https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client
         dependency("org.keycloak:keycloak-admin-client:26.0.3")
         // https://mvnrepository.com/artifact/com.redis/testcontainers-redis
@@ -82,9 +82,9 @@ dependencyManagement {
 
         // docs
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
-        dependency("io.swagger.core.v3:swagger-annotations:2.2.26")
+        dependency("io.swagger.core.v3:swagger-annotations:2.2.27")
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models
-        dependency("io.swagger.core.v3:swagger-models:2.2.26")
+        dependency("io.swagger.core.v3:swagger-models:2.2.27")
         // https://mvnrepository.com/artifact/com.github.scribejava/scribejava-core
         dependency("com.github.scribejava:scribejava-core:8.3.3")
         // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
@@ -92,9 +92,9 @@ dependencyManagement {
 
         // sentry
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.19.0")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.19.1")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
-        dependency("io.sentry:sentry-logback:7.19.0")
+        dependency("io.sentry:sentry-logback:7.19.1")
     }
 }
 
@@ -187,6 +187,6 @@ signing {
 
 tasks.wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.11.1"
+    gradleVersion = "8.12"
     distributionType = Wrapper.DistributionType.BIN
 }
