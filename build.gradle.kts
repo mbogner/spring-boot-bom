@@ -25,7 +25,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.20.4")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.29.40")
+        mavenBom("software.amazon.awssdk:bom:2.29.49")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.0.3")
     }
@@ -60,7 +60,7 @@ dependencyManagement {
 
         // http client
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
-        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.1")
+        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.2")
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
         dependency("org.apache.httpcomponents.client5:httpclient5:5.4.1")
 
@@ -70,7 +70,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:11.1.0")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
-        dependency("org.flywaydb:flyway-database-postgresql:11.1.0")
+        dependency("org.flywaydb:flyway-database-postgresql:11.1.1")
         // https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-60
         dependency("com.vladmihalcea:hibernate-types-60:2.21.1")
 
@@ -92,9 +92,9 @@ dependencyManagement {
 
         // sentry
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.19.1")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.20.0")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
-        dependency("io.sentry:sentry-logback:7.19.1")
+        dependency("io.sentry:sentry-logback:7.20.0")
     }
 }
 
