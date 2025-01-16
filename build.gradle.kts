@@ -14,10 +14,12 @@ group = "dev.mbo"
 
 dependencyManagement {
     imports {
+        val springCloudVersion = "2024.0.0"
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-parent
-        mavenBom("org.springframework.cloud:spring-cloud-starter-parent:2024.0.0")
+        mavenBom("org.springframework.cloud:spring-cloud-starter-parent:$springCloudVersion")
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2024.0.0")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
+
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
         mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.1")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
@@ -25,7 +27,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.20.4")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.29.49")
+        mavenBom("software.amazon.awssdk:bom:2.29.52")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.0.3")
     }
@@ -53,10 +55,11 @@ dependencyManagement {
 
         // OTP - https://mvnrepository.com/artifact/com.eatthepath/java-otp
         dependency("com.eatthepath:java-otp:0.4.0")
+        val zxingVersion = "3.5.3"
         // QR-Code - https://mvnrepository.com/artifact/com.google.zxing/core
-        dependency("com.google.zxing:core:3.5.3")
+        dependency("com.google.zxing:core:$zxingVersion")
         // https://mvnrepository.com/artifact/com.google.zxing/javase
-        dependency("com.google.zxing:javase:3.5.3")
+        dependency("com.google.zxing:javase:$zxingVersion")
 
         // http client
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
@@ -64,37 +67,49 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
         dependency("org.apache.httpcomponents.client5:httpclient5:5.4.1")
 
+        // jwt
+        val jjwtVersion = "0.12.6"
+        // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
+        dependency("io.jsonwebtoken:jjwt-api:$jjwtVersion")
+        // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-impl
+        dependency("io.jsonwebtoken:jjwt-impl:$jjwtVersion")
+        // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-jackson
+        dependency("io.jsonwebtoken:jjwt-jackson:$jjwtVersion")
+
         // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
-        dependency("org.postgresql:postgresql:42.7.4")
+        dependency("org.postgresql:postgresql:42.7.5")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
-        dependency("org.flywaydb:flyway-core:11.1.0")
+        dependency("org.flywaydb:flyway-core:11.1.1")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
         dependency("org.flywaydb:flyway-database-postgresql:11.1.1")
         // https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-60
         dependency("com.vladmihalcea:hibernate-types-60:2.21.1")
 
         // mapper
+        val mapstructVersion = "1.6.3"
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
-        dependency("org.mapstruct:mapstruct:1.6.3")
+        dependency("org.mapstruct:mapstruct:$mapstructVersion")
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor
-        dependency("org.mapstruct:mapstruct-processor:1.6.3")
+        dependency("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
         // docs
+        val swaggerVersion = "2.2.27"
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
-        dependency("io.swagger.core.v3:swagger-annotations:2.2.27")
+        dependency("io.swagger.core.v3:swagger-annotations:$swaggerVersion")
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models
-        dependency("io.swagger.core.v3:swagger-models:2.2.27")
+        dependency("io.swagger.core.v3:swagger-models:$swaggerVersion")
         // https://mvnrepository.com/artifact/com.github.scribejava/scribejava-core
         dependency("com.github.scribejava:scribejava-core:8.3.3")
         // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
         // sentry
+        val sentryVersion = "7.20.0"
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:7.20.0")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:$sentryVersion")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
-        dependency("io.sentry:sentry-logback:7.20.0")
+        dependency("io.sentry:sentry-logback:$sentryVersion")
     }
 }
 
