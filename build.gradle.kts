@@ -52,6 +52,8 @@ dependencyManagement {
         dependency("org.jsoup:jsoup:1.18.3")
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
         dependency("org.wiremock:wiremock:3.10.0")
+        // https://mvnrepository.com/artifact/io.nats/jnats
+        dependency("io.nats:jnats:2.20.5")
 
         // OTP - https://mvnrepository.com/artifact/com.eatthepath/java-otp
         dependency("com.eatthepath:java-otp:0.4.0")
