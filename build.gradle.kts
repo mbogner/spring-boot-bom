@@ -21,15 +21,15 @@ dependencyManagement {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
 
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.2")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.3")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.jetbrains.kotlin:kotlin-bom:2.1.10")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("org.testcontainers:testcontainers-bom:1.20.4")
+        mavenBom("org.testcontainers:testcontainers-bom:1.20.5")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.30.16")
+        mavenBom("software.amazon.awssdk:bom:2.30.25")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
-        mavenBom("io.ktor:ktor-bom:3.0.3")
+        mavenBom("io.ktor:ktor-bom:3.1.0")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
@@ -43,7 +43,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client
         dependency("org.keycloak:keycloak-admin-client:26.0.4")
         // https://mvnrepository.com/artifact/com.redis/testcontainers-redis
-        dependency("com.redis:testcontainers-redis:2.2.3")
+        dependency("com.redis:testcontainers-redis:2.2.4")
         // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
         dependency("org.mockito.kotlin:mockito-kotlin:5.4.0")
         // https://mvnrepository.com/artifact/com.aallam.openai/openai-client
@@ -51,7 +51,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.jsoup/jsoup
         dependency("org.jsoup:jsoup:1.18.3")
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
-        dependency("org.wiremock:wiremock:3.11.0")
+        dependency("org.wiremock:wiremock:3.12.0")
         // https://mvnrepository.com/artifact/io.nats/jnats
         dependency("io.nats:jnats:2.20.5")
 
@@ -81,10 +81,11 @@ dependencyManagement {
         // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         dependency("org.postgresql:postgresql:42.7.5")
+        val flywayVersion = "11.3.3"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
-        dependency("org.flywaydb:flyway-core:11.3.1")
+        dependency("org.flywaydb:flyway-core:$flywayVersion")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
-        dependency("org.flywaydb:flyway-database-postgresql:11.3.1")
+        dependency("org.flywaydb:flyway-database-postgresql:$flywayVersion")
         // https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-60
         dependency("com.vladmihalcea:hibernate-types-60:2.21.1")
 
@@ -107,7 +108,7 @@ dependencyManagement {
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
         // sentry
-        val sentryVersion = "8.1.0"
+        val sentryVersion = "8.2.0"
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
         dependency("io.sentry:sentry-spring-boot-starter-jakarta:$sentryVersion")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
