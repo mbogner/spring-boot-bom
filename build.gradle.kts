@@ -14,22 +14,22 @@ group = "dev.mbo"
 
 dependencyManagement {
     imports {
-        val springCloudVersion = "2024.0.0"
+        val springCloudVersion = "2024.0.1"
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-parent
         mavenBom("org.springframework.cloud:spring-cloud-starter-parent:$springCloudVersion")
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
 
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.3")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.4")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
-        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.1.10")
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.1.20")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("org.testcontainers:testcontainers-bom:1.20.5")
+        mavenBom("org.testcontainers:testcontainers-bom:1.20.6")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.30.25")
+        mavenBom("software.amazon.awssdk:bom:2.31.10")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
-        mavenBom("io.ktor:ktor-bom:3.1.0")
+        mavenBom("io.ktor:ktor-bom:3.1.2")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
@@ -49,11 +49,11 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/com.aallam.openai/openai-client
         dependency("com.aallam.openai:openai-client:4.0.1")
         // https://mvnrepository.com/artifact/org.jsoup/jsoup
-        dependency("org.jsoup:jsoup:1.18.3")
+        dependency("org.jsoup:jsoup:1.19.1")
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
-        dependency("org.wiremock:wiremock:3.12.0")
+        dependency("org.wiremock:wiremock:3.12.1")
         // https://mvnrepository.com/artifact/io.nats/jnats
-        dependency("io.nats:jnats:2.20.5")
+        dependency("io.nats:jnats:2.21.0")
 
         // OTP - https://mvnrepository.com/artifact/com.eatthepath/java-otp
         dependency("com.eatthepath:java-otp:0.4.0")
@@ -65,9 +65,9 @@ dependencyManagement {
 
         // http client
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
-        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.3")
+        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.4")
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
-        dependency("org.apache.httpcomponents.client5:httpclient5:5.4.2")
+        dependency("org.apache.httpcomponents.client5:httpclient5:5.4.3")
 
         // jwt
         val jjwtVersion = "0.12.6"
@@ -81,7 +81,7 @@ dependencyManagement {
         // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         dependency("org.postgresql:postgresql:42.7.5")
-        val flywayVersion = "11.3.3"
+        val flywayVersion = "11.5.0"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
@@ -108,7 +108,7 @@ dependencyManagement {
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
         // sentry
-        val sentryVersion = "8.2.0"
+        val sentryVersion = "8.5.0"
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
         dependency("io.sentry:sentry-spring-boot-starter-jakarta:$sentryVersion")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
@@ -205,6 +205,6 @@ signing {
 
 tasks.wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.12.1"
+    gradleVersion = "8.13"
     distributionType = Wrapper.DistributionType.BIN
 }
