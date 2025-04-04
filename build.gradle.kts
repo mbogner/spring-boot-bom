@@ -54,6 +54,8 @@ dependencyManagement {
         dependency("org.wiremock:wiremock:3.12.1")
         // https://mvnrepository.com/artifact/io.nats/jnats
         dependency("io.nats:jnats:2.21.0")
+        // https://mvnrepository.com/artifact/org.passay/passay
+        dependency("org.passay:passay:1.6.6") // password check
 
         // OTP - https://mvnrepository.com/artifact/com.eatthepath/java-otp
         dependency("com.eatthepath:java-otp:0.4.0")
