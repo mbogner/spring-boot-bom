@@ -27,7 +27,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.20.6")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.31.10")
+        mavenBom("software.amazon.awssdk:bom:2.31.16")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.1.2")
     }
@@ -83,7 +83,7 @@ dependencyManagement {
         // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         dependency("org.postgresql:postgresql:42.7.5")
-        val flywayVersion = "11.5.0"
+        val flywayVersion = "11.6.0"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
@@ -99,7 +99,7 @@ dependencyManagement {
         dependency("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
         // docs
-        val swaggerVersion = "2.2.28"
+        val swaggerVersion = "2.2.29"
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
         dependency("io.swagger.core.v3:swagger-annotations:$swaggerVersion")
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models
@@ -110,7 +110,7 @@ dependencyManagement {
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
         // sentry
-        val sentryVersion = "8.5.0"
+        val sentryVersion = "8.6.0"
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
         dependency("io.sentry:sentry-spring-boot-starter-jakarta:$sentryVersion")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
