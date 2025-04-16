@@ -57,7 +57,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.passay/passay
         dependency("org.passay:passay:1.6.6") // password check
         // https://mvnrepository.com/artifact/org.apache.commons/commons-compress
-        implementation("org.apache.commons:commons-compress:1.27.1")
+        dependency("org.apache.commons:commons-compress:1.27.1")
 
         // OTP - https://mvnrepository.com/artifact/com.eatthepath/java-otp
         dependency("com.eatthepath:java-otp:0.4.0")
