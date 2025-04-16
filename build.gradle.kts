@@ -27,7 +27,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.20.6")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.31.16")
+        mavenBom("software.amazon.awssdk:bom:2.31.22")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.1.2")
     }
@@ -35,13 +35,13 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
         dependency("org.apache.commons:commons-lang3:3.17.0")
         // https://mvnrepository.com/artifact/commons-io/commons-io
-        dependency("commons-io:commons-io:2.18.0")
+        dependency("commons-io:commons-io:2.19.0")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-pool2
         dependency("org.apache.commons:commons-pool2:2.12.1")
         // https://mvnrepository.com/artifact/org.freemarker/freemarker
         dependency("org.freemarker:freemarker:2.3.34")
         // https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client
-        dependency("org.keycloak:keycloak-admin-client:26.0.4")
+        dependency("org.keycloak:keycloak-admin-client:26.0.5")
         // https://mvnrepository.com/artifact/com.redis/testcontainers-redis
         dependency("com.redis:testcontainers-redis:2.2.4")
         // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
@@ -53,7 +53,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
         dependency("org.wiremock:wiremock:3.12.1")
         // https://mvnrepository.com/artifact/io.nats/jnats
-        dependency("io.nats:jnats:2.21.0")
+        dependency("io.nats:jnats:2.21.1")
         // https://mvnrepository.com/artifact/org.passay/passay
         dependency("org.passay:passay:1.6.6") // password check
         // https://mvnrepository.com/artifact/org.apache.commons/commons-compress
@@ -85,7 +85,7 @@ dependencyManagement {
         // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         dependency("org.postgresql:postgresql:42.7.5")
-        val flywayVersion = "11.6.0"
+        val flywayVersion = "11.7.1"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
@@ -101,7 +101,7 @@ dependencyManagement {
         dependency("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
         // docs
-        val swaggerVersion = "2.2.29"
+        val swaggerVersion = "2.2.30"
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
         dependency("io.swagger.core.v3:swagger-annotations:$swaggerVersion")
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-models
@@ -112,7 +112,7 @@ dependencyManagement {
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
         // sentry
-        val sentryVersion = "8.6.0"
+        val sentryVersion = "8.8.0"
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
         dependency("io.sentry:sentry-spring-boot-starter-jakarta:$sentryVersion")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
