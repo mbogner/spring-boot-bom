@@ -112,7 +112,7 @@ dependencyManagement {
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
         // sentry
-        val sentryVersion = "8.10.0"
+        val sentryVersion = "8.9.0" // downgrade for io.sentry.jvm.gradle 5.4.0
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
         dependency("io.sentry:sentry-spring-boot-starter-jakarta:$sentryVersion")
         // https://mvnrepository.com/artifact/io.sentry/sentry-logback
