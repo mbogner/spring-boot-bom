@@ -27,7 +27,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.21.0")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.31.30")
+        mavenBom("software.amazon.awssdk:bom:2.31.33")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.1.2")
     }
@@ -49,7 +49,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/com.aallam.openai/openai-client
         dependency("com.aallam.openai:openai-client:4.0.1")
         // https://mvnrepository.com/artifact/org.jsoup/jsoup
-        dependency("org.jsoup:jsoup:1.19.1")
+        dependency("org.jsoup:jsoup:1.20.1")
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
         dependency("org.wiremock:wiremock:3.13.0")
         // https://mvnrepository.com/artifact/io.nats/jnats
@@ -112,11 +112,10 @@ dependencyManagement {
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
         // sentry
-        val sentryVersion = "8.9.0" // downgrade for io.sentry.jvm.gradle 5.4.0
+        // downgrade for io.sentry.jvm.gradle 5.4.0 -> https://mvnrepository.com/artifact/io.sentry.jvm.gradle/io.sentry.jvm.gradle.gradle.plugin
+        // try upgrading the plugin and check compatibility of the sentry-spring-boot-starter-jakarta before changing here
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:$sentryVersion")
-        // https://mvnrepository.com/artifact/io.sentry/sentry-logback
-        dependency("io.sentry:sentry-logback:$sentryVersion")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.9.0")
     }
 }
 
