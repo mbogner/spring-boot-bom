@@ -27,7 +27,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.21.0")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.31.33")
+        mavenBom("software.amazon.awssdk:bom:2.31.35")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
         mavenBom("io.ktor:ktor-bom:3.1.2")
     }
