@@ -111,6 +111,12 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
+        val archUnitVersion = "1.4.0"
+        // https://mvnrepository.com/artifact/com.tngtech.archunit/archunit
+        dependency("com.tngtech.archunit:archunit:$archUnitVersion")
+        // https://mvnrepository.com/artifact/com.tngtech.archunit/archunit-junit5
+        dependency("com.tngtech.archunit:archunit-junit5:$archUnitVersion")
+
         // sentry
         // downgrade for io.sentry.jvm.gradle 5.4.0 -> https://mvnrepository.com/artifact/io.sentry.jvm.gradle/io.sentry.jvm.gradle.gradle.plugin
         // try upgrading the plugin and check compatibility of the sentry-spring-boot-starter-jakarta before changing here
