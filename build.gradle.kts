@@ -135,6 +135,10 @@ tasks.withType<GenerateModuleMetadata>().configureEach {
     enabled = false
 }
 
+tasks.named("jreleaserFullRelease") {
+    dependsOn("generatePomFileForMavenPublication")
+}
+
 tasks.named("afterReleaseBuild") {
     dependsOn(
         "signMavenPublication",
