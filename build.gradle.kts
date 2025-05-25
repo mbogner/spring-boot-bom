@@ -173,7 +173,7 @@ jreleaser {
 
     release {
         github {
-            tagName.set("v{{projectVersion}}")
+            tagName.set("{{projectVersion}}")
             releaseName.set("Spring Boot BOM {{projectVersion}}")
         }
     }
