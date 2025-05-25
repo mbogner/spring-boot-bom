@@ -158,6 +158,12 @@ jreleaser {
         }
     }
 
+    files {
+        artifact {
+            path.set(layout.buildDirectory.file("publications/maven/pom-default.xml"))
+        }
+    }
+
     signing {
         active.set(org.jreleaser.model.Active.ALWAYS)
         armored.set(true)
