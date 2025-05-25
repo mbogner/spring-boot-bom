@@ -21,15 +21,15 @@ dependencyManagement {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
 
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.4.5")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.0")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
-        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.1.20")
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.1.21")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.21.0")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("software.amazon.awssdk:bom:2.31.35")
+        mavenBom("software.amazon.awssdk:bom:2.31.50")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
-        mavenBom("io.ktor:ktor-bom:3.1.2")
+        mavenBom("io.ktor:ktor-bom:3.1.3")
     }
     dependencies {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
@@ -71,7 +71,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
         dependency("org.apache.httpcomponents.core5:httpcore5:5.3.4")
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
-        dependency("org.apache.httpcomponents.client5:httpclient5:5.4.4")
+        dependency("org.apache.httpcomponents.client5:httpclient5:5.5")
 
         // jwt
         val jjwtVersion = "0.12.6"
@@ -85,7 +85,7 @@ dependencyManagement {
         // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
         dependency("org.postgresql:postgresql:42.7.5")
-        val flywayVersion = "11.8.0"
+        val flywayVersion = "11.8.2"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-database-postgresql
@@ -111,7 +111,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
         dependency("org.springdoc:springdoc-openapi-ui:1.8.0")
 
-        val archUnitVersion = "1.4.0"
+        val archUnitVersion = "1.4.1"
         // https://mvnrepository.com/artifact/com.tngtech.archunit/archunit
         dependency("com.tngtech.archunit:archunit:$archUnitVersion")
         // https://mvnrepository.com/artifact/com.tngtech.archunit/archunit-junit5
@@ -121,7 +121,7 @@ dependencyManagement {
         // downgrade for io.sentry.jvm.gradle 5.4.0 -> https://mvnrepository.com/artifact/io.sentry.jvm.gradle/io.sentry.jvm.gradle.gradle.plugin
         // try upgrading the plugin and check compatibility of the sentry-spring-boot-starter-jakarta before changing here
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.9.0")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.12.0")
     }
 }
 
@@ -214,6 +214,6 @@ signing {
 
 tasks.wrapper {
     // https://gradle.org/releases/
-    gradleVersion = "8.14"
+    gradleVersion = "8.14.1"
     distributionType = Wrapper.DistributionType.BIN
 }
