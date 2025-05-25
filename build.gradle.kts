@@ -135,6 +135,7 @@ tasks.register<Zip>("bomZip") {
     group = "build"
     description = "create zip from bom"
     archiveFileName.set("bom-${project.version}.zip")
+    destinationDirectory.set(layout.buildDirectory.dir("distributions"))
     from(layout.buildDirectory.dir("publications/maven"))
     include("*.xml")
     dependsOn("generatePomFileForMavenPublication")
@@ -162,6 +163,16 @@ jreleaser {
         maven {
             mavenCentral {
                 active.set(org.jreleaser.model.Active.ALWAYS)
+            }
+        }
+    }
+    distributions {
+        create("bom") {
+            distributionType.set(org.jreleaser.model.Distribution.DistributionType.BINARY)
+            artifacts {
+                artifact {
+                    path.set(layout.buildDirectory.file("distributions/bom-${project.version}.zip"))
+                }
             }
         }
     }
