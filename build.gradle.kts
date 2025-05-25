@@ -161,6 +161,9 @@ jreleaser {
     files {
         artifact {
             path.set(layout.buildDirectory.file("publications/maven/pom-default.xml"))
+            active.set(org.jreleaser.model.Active.ALWAYS)
+            extraProperties.put("deployer", "maven:mavenCentral")
+            extraProperties.put("skipSigning", false)
         }
     }
 
