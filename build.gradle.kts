@@ -130,17 +130,6 @@ repositories {
     mavenCentral()
 }
 
-// using "artifact bomZip" makes the project a pom packaging
-tasks.register<Zip>("bomZip") {
-    group = "build"
-    description = "create zip from bom"
-    archiveFileName.set("bom-${project.version}.zip")
-    destinationDirectory.set(layout.buildDirectory.dir("distributions"))
-    from(layout.buildDirectory.dir("publications/maven"))
-    include("*.xml")
-    dependsOn("generatePomFileForMavenPublication")
-}
-
 // disable gradle-metadata
 tasks.withType<GenerateModuleMetadata>().configureEach {
     enabled = false
@@ -155,10 +144,25 @@ tasks.named("afterReleaseBuild") {
 }
 
 jreleaser {
+    project {
+        name.set("spring-boot-bom")
+        description.set("Spring Boot BOM for mbo.dev projects")
+        longDescription.set("A curated BOM (Bill of Materials) for Spring Boot projects aligned with Kotlin and cloud-native practices.")
+        license.set("Apache-2.0")
+        copyright.set("© 2025 mbo.dev")
+        authors.set(listOf("Manuel Bogner"))
+        tags.set(listOf("spring", "boot", "bom", "dependencies", "kotlin"))
+        links {
+            homepage.set("https://mbo.dev")
+            documentation.set("https://github.com/mbogner/spring-boot-bom")
+        }
+    }
+
     signing {
         active.set(org.jreleaser.model.Active.ALWAYS)
         armored.set(true)
     }
+
     deploy {
         maven {
             mavenCentral {
@@ -166,14 +170,11 @@ jreleaser {
             }
         }
     }
-    distributions {
-        create("bom") {
-            distributionType.set(org.jreleaser.model.Distribution.DistributionType.BINARY)
-            artifacts {
-                artifact {
-                    path.set(layout.buildDirectory.file("distributions/bom-${project.version}.zip"))
-                }
-            }
+
+    release {
+        github {
+            tagName.set("v{{projectVersion}}")
+            releaseName.set("Spring Boot BOM {{projectVersion}}")
         }
     }
 }
@@ -181,13 +182,13 @@ jreleaser {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            from(components["java"])
-            artifact(tasks["bomZip"])
-
+            // This will publish only the POM (no JAR), which is valid for BOMs
             pom {
                 name.set("Spring Boot BOM")
                 description.set("BOM for Spring Boot based projects")
                 url.set("https://mbo.dev")
+                packaging = "pom"
+
                 licenses {
                     license {
                         name.set("Apache License, Version 2.0")
@@ -197,8 +198,8 @@ publishing {
                 }
                 scm {
                     url.set("https://github.com/mbogner/spring-boot-bom")
-                    connection.set("git@github.com:mbogner/spring-boot-bom.git")
-                    developerConnection.set("git@github.com:mbogner/spring-boot-bom.git")
+                    connection.set("scm:git:git://github.com/mbogner/spring-boot-bom.git")
+                    developerConnection.set("scm:git:ssh://git@github.com/mbogner/spring-boot-bom.git")
                 }
                 developers {
                     developer {
@@ -207,8 +208,8 @@ publishing {
                         email.set("outrage_breath.0t@icloud.com")
                         organization.set("mbo.dev")
                         organizationUrl.set("https://mbo.dev")
-                        timezone.set("Europe/Vienna")
                         roles.set(listOf("developer", "architect"))
+                        timezone.set("Europe/Vienna")
                     }
                 }
                 organization {
