@@ -19,31 +19,31 @@ dependencyManagement {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
 
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.3")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.4")
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
         mavenBom("org.jetbrains.kotlin:kotlin-bom:2.2.0")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.21.3")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("software.amazon.awssdk:bom:2.31.77")
+        mavenBom("software.amazon.awssdk:bom:2.32.9")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("io.ktor:ktor-bom:3.2.0")
+        mavenBom("io.ktor:ktor-bom:3.2.2")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
     }
     dependencies {
-        dependency("org.apache.commons:commons-lang3:3.17.0")
+        dependency("org.apache.commons:commons-lang3:3.18.0")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-        dependency("commons-io:commons-io:2.19.0")
+        dependency("commons-io:commons-io:2.20.0")
         // https://mvnrepository.com/artifact/commons-io/commons-io
         dependency("org.apache.commons:commons-pool2:2.12.1")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-pool2
         dependency("org.freemarker:freemarker:2.3.34")
         // https://mvnrepository.com/artifact/org.freemarker/freemarker
-        dependency("org.keycloak:keycloak-admin-client:26.0.5")
+        dependency("org.keycloak:keycloak-admin-client:26.0.6")
         // https://mvnrepository.com/artifact/org.keycloak/keycloak-admin-client
         dependency("com.redis:testcontainers-redis:2.2.4")
         // https://mvnrepository.com/artifact/com.redis/testcontainers-redis
-        dependency("org.mockito.kotlin:mockito-kotlin:5.4.0")
+        dependency("org.mockito.kotlin:mockito-kotlin:6.0.0")
         // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
         dependency("com.aallam.openai:openai-client:4.0.1")
         // https://mvnrepository.com/artifact/com.aallam.openai/openai-client
@@ -51,14 +51,12 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.jsoup/jsoup
         dependency("org.wiremock:wiremock:3.13.1")
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
-        dependency("io.nats:jnats:2.21.3")
+        dependency("io.nats:jnats:2.21.4")
         // https://mvnrepository.com/artifact/io.nats/jnats
         dependency("org.passay:passay:1.6.6") // password check
         // https://mvnrepository.com/artifact/org.passay/passay
         dependency("org.apache.commons:commons-compress:1.27.1")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-compress
-        dependency("com.eatthepath:java-otp:0.4.0")
-        // OTP - https://mvnrepository.com/artifact/com.eatthepath/java-otp
 
         val zxingVersion = "3.5.3"
         dependency("com.google.zxing:core:$zxingVersion")
@@ -71,21 +69,12 @@ dependencyManagement {
         dependency("org.apache.httpcomponents.client5:httpclient5:5.5")
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
 
-        val jjwtVersion = "0.12.6"
-        // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt-api
-        dependency("io.jsonwebtoken:jjwt-api:$jjwtVersion") // jwt
-        dependency("io.jsonwebtoken:jjwt-impl:$jjwtVersion")
-        dependency("io.jsonwebtoken:jjwt-jackson:$jjwtVersion")
-
         dependency("org.postgresql:postgresql:42.7.7") // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
-        val flywayVersion = "11.10.1"
+        val flywayVersion = "11.10.4"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         dependency("org.flywaydb:flyway-database-postgresql:$flywayVersion")
-
-        dependency("com.vladmihalcea:hibernate-types-60:2.21.1") // hibernate types
-        // https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-60
 
         val mapstructVersion = "1.6.3"
         // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
@@ -106,10 +95,10 @@ dependencyManagement {
         dependency("com.tngtech.archunit:archunit:$archUnitVersion")
         dependency("com.tngtech.archunit:archunit-junit5:$archUnitVersion")
 
-        // downgrade for io.sentry.jvm.gradle 5.8.0 -> https://mvnrepository.com/artifact/io.sentry.jvm.gradle/io.sentry.jvm.gradle.gradle.plugin
-        // try upgrading the plugin and check compatibility of the sentry-spring-boot-starter-jakarta before changing here
+        // gradle plugin: https://mvnrepository.com/artifact/io.sentry.jvm.gradle/io.sentry.jvm.gradle.gradle.plugin
         // see https://docs.sentry.io/platforms/java/guides/spring-boot/ for compatibility
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.16.0")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.17.0")
+        // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
     }
 }
 
