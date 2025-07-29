@@ -25,7 +25,7 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.21.3")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("software.amazon.awssdk:bom:2.32.9")
+        mavenBom("software.amazon.awssdk:bom:2.32.10")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
         mavenBom("io.ktor:ktor-bom:3.2.2")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
@@ -75,11 +75,6 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         dependency("org.flywaydb:flyway-database-postgresql:$flywayVersion")
-
-        val mapstructVersion = "1.6.3"
-        // https://mvnrepository.com/artifact/org.mapstruct/mapstruct
-        dependency("org.mapstruct:mapstruct:$mapstructVersion") // mapper
-        dependency("org.mapstruct:mapstruct-processor:$mapstructVersion")
 
         val swaggerVersion = "2.2.34"
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
