@@ -19,15 +19,15 @@ dependencyManagement {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
 
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.4")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.5")
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.2.0")
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.2.10")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.21.3")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("software.amazon.awssdk:bom:2.32.10")
+        mavenBom("software.amazon.awssdk:bom:2.32.30")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("io.ktor:ktor-bom:3.2.2")
+        mavenBom("io.ktor:ktor-bom:3.2.3")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
     }
     dependencies {
@@ -35,6 +35,8 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
         dependency("commons-io:commons-io:2.20.0")
         // https://mvnrepository.com/artifact/commons-io/commons-io
+        dependency("commons-codec:commons-codec:1.19.0")
+        // https://mvnrepository.com/artifact/commons-codec/commons-codec
         dependency("org.apache.commons:commons-pool2:2.12.1")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-pool2
         dependency("org.freemarker:freemarker:2.3.34")
@@ -47,15 +49,15 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.mockito.kotlin/mockito-kotlin
         dependency("com.aallam.openai:openai-client:4.0.1")
         // https://mvnrepository.com/artifact/com.aallam.openai/openai-client
-        dependency("org.jsoup:jsoup:1.21.1")
+        dependency("org.jsoup:jsoup:1.21.2")
         // https://mvnrepository.com/artifact/org.jsoup/jsoup
         dependency("org.wiremock:wiremock:3.13.1")
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
-        dependency("io.nats:jnats:2.21.4")
+        dependency("io.nats:jnats:2.21.5")
         // https://mvnrepository.com/artifact/io.nats/jnats
         dependency("org.passay:passay:1.6.6") // password check
         // https://mvnrepository.com/artifact/org.passay/passay
-        dependency("org.apache.commons:commons-compress:1.27.1")
+        dependency("org.apache.commons:commons-compress:1.28.0")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-compress
 
         val zxingVersion = "3.5.3"
@@ -71,12 +73,12 @@ dependencyManagement {
 
         dependency("org.postgresql:postgresql:42.7.7") // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
-        val flywayVersion = "11.10.4"
+        val flywayVersion = "11.11.2"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         dependency("org.flywaydb:flyway-database-postgresql:$flywayVersion")
 
-        val swaggerVersion = "2.2.34"
+        val swaggerVersion = "2.2.36"
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
         dependency("io.swagger.core.v3:swagger-annotations:$swaggerVersion") // docs
         dependency("io.swagger.core.v3:swagger-models:$swaggerVersion")
@@ -92,7 +94,7 @@ dependencyManagement {
 
         // gradle plugin: https://mvnrepository.com/artifact/io.sentry.jvm.gradle/io.sentry.jvm.gradle.gradle.plugin
         // see https://docs.sentry.io/platforms/java/guides/spring-boot/ for compatibility
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.17.0")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.20.0")
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
     }
 }
@@ -120,7 +122,7 @@ tasks {
     }
 
     named<Wrapper>("wrapper") {
-        gradleVersion = "8.14.3"
+        gradleVersion = "9.0.0"
         // https://gradle.org/releases/
         distributionType = Wrapper.DistributionType.BIN
     }
