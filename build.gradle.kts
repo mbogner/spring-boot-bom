@@ -5,7 +5,7 @@ plugins {
     `maven-publish`
     id("io.spring.dependency-management") version "1.1.7" // https://plugins.gradle.org/plugin/io.spring.dependency-management
     id("net.researchgate.release") version "3.1.0" // https://plugins.gradle.org/plugin/net.researchgate.release
-    id("org.jreleaser") version "1.20.0" // https://plugins.gradle.org/plugin/org.jreleaser
+    id("org.jreleaser") version "1.19.0" // https://plugins.gradle.org/plugin/org.jreleaser
 }
 
 group = "dev.mbo"
