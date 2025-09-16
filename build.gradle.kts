@@ -5,7 +5,7 @@ plugins {
     `maven-publish`
     id("io.spring.dependency-management") version "1.1.7" // https://plugins.gradle.org/plugin/io.spring.dependency-management
     id("net.researchgate.release") version "3.1.0" // https://plugins.gradle.org/plugin/net.researchgate.release
-    id("org.jreleaser") version "1.19.0" // https://plugins.gradle.org/plugin/org.jreleaser
+    id("org.jreleaser") version "1.20.0" // https://plugins.gradle.org/plugin/org.jreleaser
 }
 
 group = "dev.mbo"
@@ -21,13 +21,13 @@ dependencyManagement {
 
         mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.5")
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
-        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.2.10")
+        mavenBom("org.jetbrains.kotlin:kotlin-bom:2.2.20")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.21.3")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("software.amazon.awssdk:bom:2.32.30")
+        mavenBom("software.amazon.awssdk:bom:2.33.9")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
-        mavenBom("io.ktor:ktor-bom:3.2.3")
+        mavenBom("io.ktor:ktor-bom:3.3.0")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
     }
     dependencies {
@@ -53,12 +53,14 @@ dependencyManagement {
         // https://mvnrepository.com/artifact/org.jsoup/jsoup
         dependency("org.wiremock:wiremock:3.13.1")
         // https://mvnrepository.com/artifact/org.wiremock/wiremock
-        dependency("io.nats:jnats:2.21.5")
+        dependency("io.nats:jnats:2.22.0")
         // https://mvnrepository.com/artifact/io.nats/jnats
         dependency("org.passay:passay:1.6.6") // password check
         // https://mvnrepository.com/artifact/org.passay/passay
         dependency("org.apache.commons:commons-compress:1.28.0")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-compress
+        dependency("com.eatthepath:java-otp:0.4.0")
+        // https://mvnrepository.com/artifact/com.eatthepath/java-otp
 
         val zxingVersion = "3.5.3"
         dependency("com.google.zxing:core:$zxingVersion")
@@ -66,14 +68,14 @@ dependencyManagement {
         dependency("com.google.zxing:javase:$zxingVersion")
         // https://mvnrepository.com/artifact/com.google.zxing/javase
 
-        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.4") // http client
+        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.5") // http client
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
         dependency("org.apache.httpcomponents.client5:httpclient5:5.5")
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
 
         dependency("org.postgresql:postgresql:42.7.7") // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
-        val flywayVersion = "11.11.2"
+        val flywayVersion = "11.12.0"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         dependency("org.flywaydb:flyway-database-postgresql:$flywayVersion")
@@ -94,7 +96,7 @@ dependencyManagement {
 
         // gradle plugin: https://mvnrepository.com/artifact/io.sentry.jvm.gradle/io.sentry.jvm.gradle.gradle.plugin
         // see https://docs.sentry.io/platforms/java/guides/spring-boot/ for compatibility
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.20.0")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.21.1")
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
     }
 }
