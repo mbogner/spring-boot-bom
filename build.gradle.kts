@@ -165,6 +165,7 @@ jreleaser {
 
     release {
         github {
+            skipTag.set(true)
             tagName.set("{{projectVersion}}")
             releaseName.set("Spring Boot BOM {{projectVersion}}")
         }
