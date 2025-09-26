@@ -19,19 +19,19 @@ dependencyManagement {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
         // https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies
 
-        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.5")
+        mavenBom("org.springframework.boot:spring-boot-dependencies:3.5.6")
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies
         mavenBom("org.jetbrains.kotlin:kotlin-bom:2.2.20")
         // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-bom
         mavenBom("org.testcontainers:testcontainers-bom:1.21.3")
         // https://mvnrepository.com/artifact/org.testcontainers/testcontainers-bom
-        mavenBom("software.amazon.awssdk:bom:2.33.9")
+        mavenBom("software.amazon.awssdk:bom:2.34.3")
         // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
         mavenBom("io.ktor:ktor-bom:3.3.0")
         // https://mvnrepository.com/artifact/io.ktor/ktor-bom
     }
     dependencies {
-        dependency("org.apache.commons:commons-lang3:3.18.0")
+        dependency("org.apache.commons:commons-lang3:3.19.0")
         // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
         dependency("commons-io:commons-io:2.20.0")
         // https://mvnrepository.com/artifact/commons-io/commons-io
@@ -68,19 +68,19 @@ dependencyManagement {
         dependency("com.google.zxing:javase:$zxingVersion")
         // https://mvnrepository.com/artifact/com.google.zxing/javase
 
-        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.5") // http client
+        dependency("org.apache.httpcomponents.core5:httpcore5:5.3.6") // http client
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5
         dependency("org.apache.httpcomponents.client5:httpclient5:5.5")
         // https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5
 
-        dependency("org.postgresql:postgresql:42.7.7") // database
+        dependency("org.postgresql:postgresql:42.7.8") // database
         // https://mvnrepository.com/artifact/org.postgresql/postgresql
-        val flywayVersion = "11.12.0"
+        val flywayVersion = "11.13.1"
         // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
         dependency("org.flywaydb:flyway-core:$flywayVersion")
         dependency("org.flywaydb:flyway-database-postgresql:$flywayVersion")
 
-        val swaggerVersion = "2.2.36"
+        val swaggerVersion = "2.2.37"
         // https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
         dependency("io.swagger.core.v3:swagger-annotations:$swaggerVersion") // docs
         dependency("io.swagger.core.v3:swagger-models:$swaggerVersion")
@@ -96,7 +96,7 @@ dependencyManagement {
 
         // gradle plugin: https://mvnrepository.com/artifact/io.sentry.jvm.gradle/io.sentry.jvm.gradle.gradle.plugin
         // see https://docs.sentry.io/platforms/java/guides/spring-boot/ for compatibility
-        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.21.1")
+        dependency("io.sentry:sentry-spring-boot-starter-jakarta:8.22.0")
         // https://mvnrepository.com/artifact/io.sentry/sentry-spring-boot-starter-jakarta
     }
 }
@@ -124,7 +124,7 @@ tasks {
     }
 
     named<Wrapper>("wrapper") {
-        gradleVersion = "9.0.0"
+        gradleVersion = "9.1.0"
         // https://gradle.org/releases/
         distributionType = Wrapper.DistributionType.BIN
     }
